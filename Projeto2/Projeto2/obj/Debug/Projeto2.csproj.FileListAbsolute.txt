@@ -5,3 +5,10 @@ C:\Users\guilh\source\repos\Projeto2\Projeto2\obj\Debug\Projeto2.csprojAssemblyR
 C:\Users\guilh\source\repos\Projeto2\Projeto2\obj\Debug\Projeto2.csproj.CoreCompileInputs.cache
 C:\Users\guilh\source\repos\Projeto2\Projeto2\obj\Debug\Projeto2.exe
 C:\Users\guilh\source\repos\Projeto2\Projeto2\obj\Debug\Projeto2.pdb
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\bin\Debug\Projeto2.exe.config
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\bin\Debug\Projeto2.exe
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\bin\Debug\Projeto2.pdb
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.csprojAssemblyReference.cache
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.csproj.CoreCompileInputs.cache
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.exe
+C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.pdb

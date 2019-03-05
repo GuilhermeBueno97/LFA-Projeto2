@@ -12,3 +12,10 @@ C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Pr
 C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.csproj.CoreCompileInputs.cache
 C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.exe
 C:\Users\guilh\Desktop\Facens\LFA LAB\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.pdb
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\bin\Debug\Projeto2.exe.config
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\bin\Debug\Projeto2.exe
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\bin\Debug\Projeto2.pdb
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.csprojAssemblyReference.cache
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.csproj.CoreCompileInputs.cache
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.exe
+C:\Users\marki\Desktop\9º Semestre\Linguagem Formais e Automatos\LFAProjeto2\Projeto2\Projeto2\obj\Debug\Projeto2.pdb

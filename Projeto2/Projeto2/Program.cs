@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Projeto2
 {
@@ -11,15 +9,13 @@ namespace Projeto2
     {
         static void Main(string[] args)
         {
-            Console.Write("Digite as variáveis <separados por espaço>:\t");
-            string v = Console.ReadLine();
-            string[] variaveis = v.Split(' ');
+            Console.Write("Digite as variáveis <separadas por espaço>:\t");
+            string[] variaveis = Console.ReadLine().Split(' ');
 
             Console.Write("Digite o alfabeto <separados por espaço>:\t");
-            string a = Console.ReadLine();
-            string[] alfabeto = a.Split(' ');
+            string[] alfabeto = Console.ReadLine().Split(' ');
 
-            Console.WriteLine("Digite as regras de produção separados por espaço <Digite FIM para finalizar>:\t");
+            Console.WriteLine("Digite as regras de produção separadas por espaço <Digite FIM para finalizar>:\t");
             List<string[]> regras = new List<string[]>();
             string op = "";
             do
@@ -27,22 +23,26 @@ namespace Projeto2
                 op = Console.ReadLine();
                 string[] arr = op.Split(' ');
                 regras.Add(arr);
-            } while(!op.Equals("FIM"));
+            } while (!op.Equals("FIM"));
 
-            Console.Write("Digite a variável inicial:\t");
-            string varInicial = Console.ReadLine();
+            string varInicial = "";
+            do
+            {
+                Console.Write("Digite uma variável inicial válida:\t");
+                varInicial = Console.ReadLine();
+            } while (!variaveis.Contains(varInicial));
 
             Console.Write("Digite a ordem das regras <separados por espaço>:\t");
-            string o = Console.ReadLine();
-            string[] ordem = o.Split(' ');
+            string[] ordem = Console.ReadLine().Split(' ');
 
             int passo = 0;
 
-            recursao(regras, varInicial, ordem, passo);
+            BuscaOrdens(regras, varInicial, ordem, passo, alfabeto);
+
             Console.ReadKey();
         }
 
-        static void recursao(List<string[]> regras, string resposta, string[] ordem, int passo)
+        static void BuscaOrdens(List<string[]> regras, string resposta, string[] ordem, int passo, string[] alfabeto)
         {
             if (passo < ordem.Length)
             {
@@ -50,20 +50,41 @@ namespace Projeto2
                 if (resposta.Contains(str))
                 {
                     string strTrocar = regras[Convert.ToInt32(ordem[passo])][1];
-                    resposta = aplicaRegra(resposta, str, strTrocar);
-                    recursao(regras, resposta, ordem, passo + 1);
+                    resposta = AplicaRegra(resposta, str, strTrocar);
                 }
+                BuscaOrdens(regras, resposta, ordem, passo + 1, alfabeto);
             }
             else
             {
-                Console.WriteLine(resposta);
+                if (VerificaPalavraValida(resposta, alfabeto))
+                {
+                    Console.WriteLine("Palavra: " + resposta);
+                }
+                else
+                {
+                    Console.WriteLine("A palavra não é valida: " + resposta);
+                }
             }
+
         }
 
-        static string aplicaRegra(string resposta, string find, string swap)
+        static string AplicaRegra(string resposta, string find, string swap)
         {
             Regex s = new Regex(find);
             return s.Replace(resposta, swap, 1);
+        }
+
+        static bool VerificaPalavraValida(string palavra, string[] alfabeto)
+        {
+            foreach (char c in palavra)
+            {
+                if (!alfabeto.Contains(c.ToString()))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

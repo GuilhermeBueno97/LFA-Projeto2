@@ -21,8 +21,12 @@ namespace Projeto2
             do
             {
                 op = Console.ReadLine();
-                string[] arr = op.Split(' ');
-                regras.Add(arr);
+
+                if (!op.Equals("FIM"))
+                {
+                    string[] arr = op.Split(' ');
+                    regras.Add(arr);
+                }
             } while (!op.Equals("FIM"));
 
             string varInicial = "";
@@ -32,8 +36,26 @@ namespace Projeto2
                 varInicial = Console.ReadLine();
             } while (!variaveis.Contains(varInicial));
 
-            Console.Write("Digite a ordem das regras <separados por espaço>:\t");
-            string[] ordem = Console.ReadLine().Split(' ');
+            //Console.Write("Digite a ordem das regras <separados por espaço>:\t");
+            //string[] ordem = Console.ReadLine().Split(' ');
+
+            string[] ordem;
+            bool flag;
+            do
+            {
+                flag = false;
+                Console.Write("Digite a ordem das regras <separados por espaço>:\t");
+                ordem = Console.ReadLine().Split(' ');
+
+                foreach (string s in ordem)
+                {
+                    if (Convert.ToInt32(s) > regras.Count - 1 || Convert.ToInt32(s) < 0)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+            } while (flag);
 
             int passo = 0;
 

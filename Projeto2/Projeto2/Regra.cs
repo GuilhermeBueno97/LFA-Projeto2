@@ -6,9 +6,32 @@ using System.Threading.Tasks;
 
 namespace Projeto2
 {
-    public class Regra
+    class Regra
     {
-        private string Predecessor { get; set; }
-        private string Sucessor { get; set; }
+        private string Sucessor;
+        private string Predecessor;
+
+        public string predecessor
+        {
+            get
+            {
+                return Predecessor;
+            }
+            set
+            {
+                Predecessor = value;
+            }
+        }
+        public string sucessor
+        {
+            get
+            {
+                return Sucessor;
+            }
+            set
+            {
+                Sucessor = value;
+            }
+        }
     }
 }

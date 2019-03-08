@@ -16,7 +16,7 @@ namespace Projeto2
             string[] alfabeto = Console.ReadLine().Split(' ');
 
             Console.WriteLine("Digite as regras de produção separadas por espaço <Digite FIM para finalizar>:\t");
-            List<string[]> regras = new List<string[]>();
+            List<Regra> regras = new List<Regra>();
             string op = "";
             do
             {
@@ -25,7 +25,10 @@ namespace Projeto2
                 if (!op.Equals("FIM"))
                 {
                     string[] arr = op.Split(' ');
-                    regras.Add(arr);
+                    Regra reg = new Regra();
+                    reg.predecessor = arr[0];
+                    reg.sucessor = arr[1];
+                    regras.Add(reg);
                 }
             } while (!op.Equals("FIM"));
 
@@ -35,9 +38,6 @@ namespace Projeto2
                 Console.Write("Digite uma variável inicial válida:\t");
                 varInicial = Console.ReadLine();
             } while (!variaveis.Contains(varInicial));
-
-            //Console.Write("Digite a ordem das regras <separados por espaço>:\t");
-            //string[] ordem = Console.ReadLine().Split(' ');
 
             string[] ordem;
             bool flag;
@@ -55,6 +55,11 @@ namespace Projeto2
                         break;
                     }
                 }
+
+                if (!flag && !regras[Convert.ToInt32(ordem[0])].predecessor.Equals(varInicial))
+                {
+                    flag = true;
+                }
             } while (flag);
 
             int passo = 0;
@@ -64,14 +69,14 @@ namespace Projeto2
             Console.ReadKey();
         }
 
-        static void BuscaOrdens(List<string[]> regras, string resposta, string[] ordem, int passo, string[] alfabeto)
+        static void BuscaOrdens(List<Regra> regras, string resposta, string[] ordem, int passo, string[] alfabeto)
         {
             if (passo < ordem.Length)
             {
-                string str = regras[Convert.ToInt32(ordem[passo])][0];
+                string str = regras[Convert.ToInt32(ordem[passo])].predecessor;
                 if (resposta.Contains(str))
                 {
-                    string strTrocar = regras[Convert.ToInt32(ordem[passo])][1];
+                    string strTrocar = regras[Convert.ToInt32(ordem[passo])].sucessor;
                     resposta = AplicaRegra(resposta, str, strTrocar);
                 }
                 BuscaOrdens(regras, resposta, ordem, passo + 1, alfabeto);
